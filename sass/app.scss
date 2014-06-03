@@ -1,0 +1,184 @@
+body {
+	font-family: sans-serif;
+	margin: 0;
+}
+
+
+
+.btn {
+	white-space: nowrap;
+	display: inline-block;
+	border-radius: .25em;
+	background: #444;
+	color: #fff;
+	line-height: 2.5;
+	padding-left: .75em;
+	padding-right: .75em;
+	font-family: inherit;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn.-small {
+	font-size: .875rem;
+}
+
+
+
+.btn:active {
+	background: #111;
+}
+
+.section {
+	padding: 2em;
+}
+
+.section--deep {
+	padding-bottom: 6em;
+}
+
+
+.block--h1__input {
+	font-size: 2em;
+	font-weight: 300;
+}
+
+.block--h2__input {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.block--h3__input {
+	font-size: 1.125em;
+	font-weight: bold;
+}
+
+.default,
+.block--para__input {
+	color: #666;
+	line-height: 1.4;
+	&:focus {
+		color: #333;
+	}
+}
+
+.block {
+	padding: .5rem .25rem;
+	padding-left: 2rem;
+	border-bottom: solid 1px #eee;
+	position: relative;
+	max-width: 36rem;
+
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		background: #f6f6f6;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: .5rem;
+	}
+}
+
+.is-block--focused {
+	background: #eee;
+	outline: none;
+	border-bottom-color: #ddd;
+	color: #333;
+
+	&:before {
+		background: #eee;
+	}
+}
+
+.block__controls {
+	position: absolute;
+	top: 0px;
+	left: 100%;
+	padding: 0.5em;
+	font-size: 0.8125rem;
+	background: #fff;
+}
+
+
+.block__textarea {
+	-webkit-appearance: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	border: none;
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-left: 5px solid #eee;
+	margin-top: .5em;
+	padding-left: .5em;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+
+[contenteditable='true'] {
+	&:focus {
+		outline: none;
+	}
+}
+
+.editor {
+
+}
+
+	.editor__controls {
+		margin-bottom: 1em;
+	}
+
+
+
+.field__keyval {
+	// padding: .25em;
+	background: #fafafa;
+	margin-top: .5em;
+	border: solid 1px #ddd;
+	border-radius: .25em;
+
+	.itemcontainer {
+		margin: 0;
+		padding: .5em .5em;
+		border-bottom: solid 1px #ddd;
+		
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	label {
+		display: inline-block;
+		width: 48%;
+		color: #666;
+	}
+	
+	.input {
+		display: inline-block;
+		width: 48%;
+		-webkit-appearance: none;
+		border: none;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		background: none;
+	}
+}
+
+.debug {
+	background: #EEEEE2;
+	color: #333;
+	overflow: hidden;
+	overflow-x: scroll;
+}

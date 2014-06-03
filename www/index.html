@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+
+<div class="section section--deep">
+	<h3>Block-based editor</h3>
+
+	<input data-editor name="my_content" type='hidden' value='
+{
+  "blocks": [
+    {
+      "type":"stat-block",
+      "data": [
+        {
+          "figure": "16",
+          "label_primary": "Minimum age"
+        },
+        {
+          "figure": "6+",
+          "label_primary": "Months"
+        }
+      ]
+    },
+    {
+      "type": "anchor-links",
+      "data": [
+        {
+          "href":"to-be-eligible-for-a-learner-licence",
+          "text":"Eligibility"
+        },
+        {
+          "href":"how-to-apply-for-a-learner-licence",
+          "text":"How to apply"
+        },
+        {
+          "href":"learner-licence-conditions",
+          "text":"Conditions"
+        },
+        {
+          "href":"learner-licence-costs",
+          "text":"Costs"
+        }
+      ]
+    },
+    {
+      "type":"content",
+      "data": [
+        {
+          "type": "h2",
+          "data": "To be eligible for a learner licence"
+        },
+        {
+          "type": "list",
+          "data": [
+              "You must be at least 16 years of age."
+          ]
+        }        
+      ]
+    },
+    {
+    	"type": "gallery",
+    	"data": [
+    		{
+    			"src": "/img/path.jpg",
+    			"caption": "Image caption",
+    			"alt_text": "Alt text"
+    		},
+    		{
+    			"src": "/img/path.jpg",
+    			"caption": "Image caption",
+    			"alt_text": "Alt text"
+    		},
+    		{
+    			"src": "/img/path.jpg",
+    			"caption": "Image caption",
+    			"alt_text": "Alt text"
+    		}
+    	]
+    },
+    {
+      "type":"content",
+      "data": [
+        {
+          "type": "h2",
+          "data": "How to apply for a learner licence"
+        },
+        {
+          "type": "p",
+          "data": "Visit a driver licensing agent and:"
+        },
+        {
+          "type": "list",
+          "data": [
+              [
+              	"fill out an application (form DL1)",
+              	{
+              		"type": "list",
+              		"data": [
+              			"list item 1",
+              			"list item 2",
+              			"list item 3",
+              			{
+              				"type": "list",
+              				"data": [
+              					"more",
+              					"nested",
+              					"list",
+              					"goodness"
+              				]
+              			}
+              		]
+              	}
+              ],
+              "present evidence of your identity and address",
+              "pass an eyesight test",
+              "have your photograph taken and provide a signature",
+              "pay the application and test fees",
+              "pass the learner licence theory test."
+          ]
+        }        
+      ]
+    },
+    {
+      "type": "content",
+      "data": [
+        {
+          "type":"h2",
+          "data":"Learner licence conditions"
+        }
+        ,
+        {
+          "type":"list",
+          "data": [     
+            "A supervisor must sit beside you. They must have held their full NZ licence (or an overseas equivalent) for at least two years.",
+            "Your car must display learner (L) plates, front and rear. You can obtain L plates from most driver licensing agents.",
+            "There are severe penalties for violating these conditions.",
+            "You can carry passengers if your supervisor consents."
+          ]
+        }
+        ,  
+        {
+          "type":"h3",
+          "data":"If you are learning to ride a moped:"
+        }
+        ,
+        {
+          "type":"list",
+          "data": [
+            "you don’t need a supervisor.",
+            "display an L plate on the rear of your moped.", 
+            "don’t carry any passengers.",
+            "don’t ride between 10pm and 5am."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "data": [
+        {
+          "type":"h2",
+          "data":"Learner licence costs"
+        }
+        ,
+        {
+          "type":"dl",
+          "data": [     
+            {
+              "term":"Learner licence application fee",
+              "definition": "$48.70"
+            },
+            {
+              "term":"Learner licence test fee",
+              "definition":"$47.40"
+            },
+            {
+              "term":"Total",
+              "definition":"<strong>$96.10</strong>"
+            }          
+          ]
+        }
+      ]
+    }
+  ]
+}'>
+</div>
+
+
+<div class='section debug' id="debugger">
+	<h3>Debug output</h3>
+	<pre data-debug></pre>
+</div>
+
+
+<template id="editor">
+	<div class="editor" data-js-editor>
+		<div data-controls class="editor__controls">
+			<p>
+				<span data-action="save" class='btn	-small'>Save</span>
+				<span data-action="test" class='btn	-small'>Toggle block type</span>
+
+			</p>
+			<p>
+				Active block:
+				<strong>
+					<span data-bind="blockType"></span>
+				</strong>
+			</p>
+		</div>
+		<div data-blocks></div>
+	</div>
+</template>	
+
+<template id="block">
+ 	<div class="block" data-block="true">
+	  	<span data-controls class="block__controls">
+	  		<span data-action="remove">Remove</span>
+	  	</span>
+	</div>
+</template>
+
+<script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>

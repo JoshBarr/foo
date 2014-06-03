@@ -1,0 +1,23 @@
+{
+  "name": "editor",
+  "version": "0.0.1",
+  "authors": [
+    "joshbarr <josh@joshbarr.com>"
+  ],
+  "description": "Editor",
+  "main": "app/app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "nunjucks": "~1.0.5",
+    "postal.js": "~0.10.0"
+  }
+}
